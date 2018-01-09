@@ -13,6 +13,7 @@
 		80AEC2431FFE64740001CF99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AEC2411FFE64740001CF99 /* Main.storyboard */; };
 		80AEC2451FFE64740001CF99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80AEC2441FFE64740001CF99 /* Assets.xcassets */; };
 		80AEC2481FFE64740001CF99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AEC2461FFE64740001CF99 /* LaunchScreen.storyboard */; };
+		80BBB73420045BE200D86204 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BBB73320045BE200D86204 /* CategoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		80AEC2441FFE64740001CF99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80AEC2471FFE64740001CF99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80AEC2491FFE64740001CF99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80BBB73320045BE200D86204 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		80EE0C6D200315C900592835 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				80BBB73320045BE200D86204 /* CategoryTableViewController.swift */,
 				80AEC23F1FFE64740001CF99 /* TodoListViewController.swift */,
 			);
 			path = Controllers;
@@ -174,6 +177,7 @@
 				80AEC2401FFE64740001CF99 /* TodoListViewController.swift in Sources */,
 				8082BDF520037E7E002772D9 /* DataModel.xcdatamodeld in Sources */,
 				80AEC23E1FFE64740001CF99 /* AppDelegate.swift in Sources */,
+				80BBB73420045BE200D86204 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lvtkhuong.Todoey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -334,7 +338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lvtkhuong.Todoey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
