@@ -22,6 +22,13 @@ class CategoryTableViewController: SwipeTableViewController {
 
      
     }
+    override func viewWillAppear(_ animated: Bool) {
+        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.") }
+        navBar.barTintColor = UIColor.randomFlat
+        navBar.tintColor = ContrastColorOf(navBar.barTintColor!, returnFlat: true)
+        navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(navBar.barTintColor!, returnFlat: true) ]
+        
+    }
 
     //Mark: Tableview data source methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
