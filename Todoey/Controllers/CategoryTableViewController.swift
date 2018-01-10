@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-
+import ChameleonFramework
 class CategoryTableViewController: SwipeTableViewController {
     let realm = try! Realm()
     var categoryArray : Results<Category>?
@@ -18,6 +18,7 @@ class CategoryTableViewController: SwipeTableViewController {
         super.viewDidLoad()
         loadCategoryData()
         tableView.rowHeight = 80
+        tableView.separatorStyle = .none
 
      
     }
@@ -31,8 +32,11 @@ class CategoryTableViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = UITableViewCell(style: .default, reuseIdentifier: "CategoryCell")
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        cell.textLabel?.text = categoryArray?[indexPath.row].name ?? "No category added yet"
-      
+        if let categoryCurrent = categoryArray?[indexPath.row] {
+            cell.textLabel?.text = categoryCurrent.name ?? "No category added yet"
+            cell.backgroundColor = UIColor.init(hexString: categoryCurrent.categoryColor ?? "4682b4")
+        }
+       
         return cell
     }
     
@@ -44,12 +48,14 @@ class CategoryTableViewController: SwipeTableViewController {
         if segue.identifier == "goToItems" {
             let destinationVC = segue.destination as! TodoListViewController
             if let indexPath = tableView.indexPathForSelectedRow {
-                destinationVC.selectedCategory = categoryArray?[indexPath.row]
+                if let categoryCurrent = categoryArray?[indexPath.row] {
+                    destinationVC.selectedCategory = categoryCurrent
+                    destinationVC.catColor = categoryCurrent.categoryColor
+                }
+                
             }
         }
-        
-        
-    }
+     }
     //Mark: Add new categories
     
     
@@ -64,6 +70,7 @@ class CategoryTableViewController: SwipeTableViewController {
             if categoryTextField.text != nil && categoryTextField.text! != "" {
                 let newCategory = Category()
                 newCategory.name = categoryTextField.text!
+                newCategory.categoryColor = UIColor.randomFlat.hexValue()
                 self.saveCategoryData(category: newCategory)
                 self.tableView.reloadData()
             }
