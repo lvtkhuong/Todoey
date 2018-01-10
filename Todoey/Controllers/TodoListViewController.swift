@@ -22,9 +22,7 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+      
     }
     
     //Mark - TableView Datasource Methods

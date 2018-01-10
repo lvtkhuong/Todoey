@@ -86,10 +86,5 @@ class CategoryTableViewController: UITableViewController {
         tableView.reloadData()
         
     }
-   
-    
-    
-    
-    
-  
+
 }
